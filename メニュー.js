@@ -23,7 +23,7 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'm' || event.key === '/') { // Mキーを検出
+    if (event.key === 'm' || event.key === '/') { // /キーを検出
         if (menu.style.display === 'none') {
             showMenu();
         } else {
