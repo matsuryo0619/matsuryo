@@ -1,12 +1,15 @@
+// メニューの要素を取得
 const menu = document.getElementById('menu');
 let mouseX = 0;
 let mouseY = 0;
 
+// マウスの移動を監視して座標を取得
 document.addEventListener('mousemove', (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY;
 });
 
+// メニューを表示する関数
 function showMenu() {
     menu.style.left = `${mouseX}px`;
     menu.style.top = `${mouseY}px`;
@@ -16,6 +19,7 @@ function showMenu() {
     }, 10);
 }
 
+// メニューを非表示にする関数
 function hideMenu() {
     menu.classList.remove('show');
     setTimeout(() => {
@@ -23,6 +27,7 @@ function hideMenu() {
     }, 300);
 }
 
+// キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
     if (event.key === 'm' || event.key === '/') {
         if (!menu.classList.contains('show')) {
@@ -30,5 +35,12 @@ document.addEventListener('keydown', (event) => {
         } else {
             hideMenu();
         }
+    }
+});
+
+// メニュー外をクリックした場合に非表示にする
+document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target)) { // クリックした場所がメニュー外なら
+        hideMenu();
     }
 });
