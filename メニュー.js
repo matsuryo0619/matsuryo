@@ -11,8 +11,8 @@ document.addEventListener('mousemove', (event) => {
 
 // メニューを表示する関数
 function showMenu() {
-    menu.style.left = `${mouseX}px`;
-    menu.style.top = `${mouseY}px`;
+    menu.style.left = `${mouseX + 115}px`;
+    menu.style.top = `${mouseY + 25}px`;
     menu.style.display = 'block';
     setTimeout(() => {
         menu.classList.add('show');
