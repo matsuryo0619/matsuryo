@@ -16,3 +16,11 @@
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+
+#searchBox {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
