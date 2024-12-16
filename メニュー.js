@@ -1,5 +1,6 @@
 // メニューの要素を取得
 const menu = document.getElementById('menu');
+const searchBox = document.getElementById('searchBox');
 let mouseX = 0;
 let mouseY = 0;
 
@@ -11,8 +12,8 @@ document.addEventListener('mousemove', (event) => {
 
 // メニューを表示する関数
 function showMenu() {
-    menu.style.left = `${mouseX + 115}px`;
-    menu.style.top = `${mouseY + 25}px`;
+    menu.style.left = `${mouseX}px`;
+    menu.style.top = `${mouseY}px`;
     menu.style.display = 'block';
     setTimeout(() => {
         menu.classList.add('show');
@@ -29,7 +30,7 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    if (event.key === '/' || event.key === '/') {
+    if (event.key === '/' || event.key === '?') {
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
@@ -42,5 +43,16 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('click', (event) => {
     if (!menu.contains(event.target)) { // クリックした場所がメニュー外なら
         hideMenu();
+    }
+});
+
+// テキストボックス内でEnterキーを押すと検索を実行
+searchBox.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchBox.value.trim(); // テキストボックスの内容を取得
+        if (query) {
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(searchUrl, '_blank'); // 新しいタブで検索結果を開く
+        }
     }
 });
