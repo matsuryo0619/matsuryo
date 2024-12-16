@@ -30,7 +30,11 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    if (event.key === '/' || event.key === '?') {
+    if (event.key === 'm' || event.key === 'M') {
+        // テキストボックス内では無効化
+        if (document.activeElement === searchBox) return;
+
+        // 通常の処理
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
