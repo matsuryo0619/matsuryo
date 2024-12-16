@@ -1,30 +1,12 @@
 /* メニューのスタイル */
 #menu {
-    position: fixed;
-    top: 50px;
-    right: 50px;
+    position: absolute; /* カーソル位置に表示するために絶対配置 */
     background-color: #333;
     color: white;
     padding: 10px;
     border-radius: 5px;
     display: none; /* 初期状態は非表示 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* メニュー表示時のアニメーション */
-#menu.show {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-/* アニメーション: フェードイン */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    transform: translate(-50%, -50%); /* 中心に位置させる */
+    pointer-events: none; /* カーソルが邪魔されないようにする */
 }
