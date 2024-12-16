@@ -29,7 +29,7 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'm' || event.key === '/') {
+    if (event.key === '/' || event.key === '/') {
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
