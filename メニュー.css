@@ -1,33 +1,18 @@
-/* メニューのスタイル */
 #menu {
-    position: absolute; /* カーソル位置に表示するために絶対配置 */
+    position: absolute;
     background-color: #333;
     color: white;
     padding: 10px;
     border-radius: 5px;
-    display: none; /* 初期状態は非表示 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, -50%) scale(0.8); /* 初期状態で小さく */
-    opacity: 0; /* 初期状態で透明 */
-    pointer-events: none; /* マウス操作を邪魔しない */
+    display: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* 表示状態のスタイル */
 #menu.show {
-    display: block; /* 表示 */
-    opacity: 1; /* 不透明にする */
-    transform: translate(-50%, -50%) scale(1); /* 元の大きさに戻す */
-}
-
-/* アニメーション: フェードイン＆拡大 */
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
