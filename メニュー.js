@@ -1,30 +1,31 @@
-// メニューの要素を取得
 const menu = document.getElementById('menu');
-let mouseX = 0; // マウスカーソルのX座標
-let mouseY = 0; // マウスカーソルのY座標
+let mouseX = 0;
+let mouseY = 0;
 
-// マウスの移動を監視し、座標を取得
 document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX; // ビューポート内のX座標
-    mouseY = event.clientY; // ビューポート内のY座標
+    mouseX = event.clientX;
+    mouseY = event.clientY;
 });
 
-// メニューを表示する関数
 function showMenu() {
-    menu.style.left = `${mouseX}px`; // マウスのX座標に配置
-    menu.style.top = `${mouseY}px`; // マウスのY座標に配置
+    menu.style.left = `${mouseX}px`;
+    menu.style.top = `${mouseY}px`;
     menu.style.display = 'block';
+    setTimeout(() => {
+        menu.classList.add('show');
+    }, 10);
 }
 
-// メニューを非表示にする関数
 function hideMenu() {
-    menu.style.display = 'none';
+    menu.classList.remove('show');
+    setTimeout(() => {
+        menu.style.display = 'none';
+    }, 300);
 }
 
-// キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'm' || event.key === '/') { // /キーを検出
-        if (menu.style.display === 'none') {
+    if (event.key === 'm' || event.key === 'M') {
+        if (!menu.classList.contains('show')) {
             showMenu();
         } else {
             hideMenu();
