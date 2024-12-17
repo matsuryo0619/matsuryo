@@ -32,16 +32,15 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
-    // `/` または `?` を検出
     if (event.key === '/' || event.key === '?') {
-        if (document.activeElement === searchBox) return; // テキストボックス内では無効化
+        if (document.activeElement === searchBox) return;
 
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
             hideMenu();
         }
-        event.preventDefault(); // デフォルト動作を無効化
+        event.preventDefault();
     }
 });
 
@@ -64,7 +63,7 @@ searchBox.addEventListener('keydown', (event) => {
         const query = searchBox.value.trim();
         if (query) {
             const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.open(searchUrl, '_blank'); // 新しいタブで検索結果を開く
+            window.open(searchUrl, '_blank');
         }
     }
 });
