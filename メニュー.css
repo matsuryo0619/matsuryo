@@ -30,12 +30,13 @@
     list-style-type: none;
     padding: 0;
     margin: 10px 0 0 0;
-    display: none; /* 初期状態で非表示 */
+    display: none; /* 初期状態は非表示 */
 }
-\
+
 #NewProjectList.show {
-    display: block; /* 表示時のスタイル */
+    display: block; /* クラス "show" が付与されたとき表示 */
 }
+
 
 #toggleListButton {
     background-color: #555;
