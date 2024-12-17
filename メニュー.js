@@ -2,7 +2,7 @@
 const menu = document.getElementById('menu');
 const searchBox = document.getElementById('searchBox');
 const toggleListButton = document.getElementById('toggleListButton');
-const menuList = document.getElementById('NewProjectList'); // IDを "NewList" に変更
+const menuList = document.getElementById('NewProjectList'); // IDを "NewProjectList" に変更
 let mouseX = 0;
 let mouseY = 0;
 
