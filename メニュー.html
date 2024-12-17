@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カーソル位置にメニューを表示</title>
-    <link rel="stylesheet" href="メニュー.css"> <!-- CSSを読み込み -->
+    <link rel="stylesheet" href="style.css"> <!-- CSSを読み込み -->
 </head>
 <body>
+
+    <!-- メニュー -->
     <div id="menu">
-        <input type="text" id="searchBox" placeholder="検索ワードを入力"><br>
-        <input type="button" onclick="window.open("sheets.new")" value="Googleスプレッドシート">
+        <input type="text" id="searchBox" placeholder="検索ワードを入力" />
+        <button id="toggleListButton">リストを表示</button>
+        <ul id="menuList">
+            <li>リスト項目1</li>
+            <li>リスト項目2</li>
+            <li>リスト項目3</li>
+        </ul>
     </div>
-    <script src="メニュー.js" defer></script>
+
+    <script src="menu.js" defer></script> <!-- JavaScriptを読み込み -->
 </body>
 </html>
