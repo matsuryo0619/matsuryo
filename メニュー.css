@@ -23,4 +23,31 @@
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#menuList {
+    list-style-type: none; /* デフォルトのリストスタイルを削除 */
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: none; /* 初期状態で非表示 */
+}
+
+#menuList.show {
+    display: block; /* 表示時のスタイル */
+}
+
+#toggleListButton {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#toggleListButton:hover {
+    background-color: #777;
 }
