@@ -26,14 +26,14 @@
     margin-bottom: 10px;
 }
 
-#+_new_list {
+#NewProjectList {
     list-style-type: none;
     padding: 0;
     margin: 10px 0 0 0;
     display: none; /* 初期状態で非表示 */
 }
-
-#+_new_list.show {
+\
+#NewProjectList.show {
     display: block; /* 表示時のスタイル */
 }
 
