@@ -62,6 +62,6 @@ searchBox.addEventListener('keydown', (event) => {
 });
 
 function newGoogle(type) {
-    var URL = type + ".new"
-    window.open(URL);
+    var Google = type
+    window.open(Google + ".new");
 }
