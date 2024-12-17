@@ -1,6 +1,8 @@
 // メニューの要素を取得
 const menu = document.getElementById('menu');
 const searchBox = document.getElementById('searchBox');
+const toggleListButton = document.getElementById('toggleListButton');
+const menuList = document.getElementById('menuList');
 let mouseX = 0;
 let mouseY = 0;
 
@@ -30,37 +32,38 @@ function hideMenu() {
 
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
+    // `/` または `?` を検出
     if (event.key === '/' || event.key === '?') {
-        // テキストボックス内では無効化
-        if (document.activeElement === searchBox) return;
+        if (document.activeElement === searchBox) return; // テキストボックス内では無効化
 
-        // 通常の処理
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
             hideMenu();
         }
+        event.preventDefault(); // デフォルト動作を無効化
     }
 });
 
 // メニュー外をクリックした場合に非表示にする
 document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target)) { // クリックした場所がメニュー外なら
+    if (!menu.contains(event.target)) {
         hideMenu();
     }
+});
+
+// ボタンを押したときにリストを表示・非表示
+toggleListButton.addEventListener('click', () => {
+    menuList.classList.toggle('show');
 });
 
 // テキストボックス内でEnterキーを押すと検索を実行
 searchBox.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        const query = searchBox.value.trim(); // テキストボックスの内容を取得
+        const query = searchBox.value.trim();
         if (query) {
             const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
             window.open(searchUrl, '_blank'); // 新しいタブで検索結果を開く
         }
     }
 });
-
-function newGoogle(type) {
-    window.open(type + ".new");
-}
