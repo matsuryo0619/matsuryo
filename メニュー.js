@@ -55,7 +55,7 @@ document.addEventListener('click', (event) => {
 // ボタンを押したときにリストを表示・非表示
 toggleListButton.addEventListener('click', () => {
     const isVisible = menuList.classList.toggle('show');
-    toggleListButton.textContent = isVisible ? 'リストを非表示' : 'リストを表示'; // ボタンの文字を切り替え
+    toggleListButton.textContent = isVisible ? '- 新規' : '+ 新規'; // ボタンの文字を切り替え
 });
 
 // テキストボックス内でEnterキーを押すと検索を実行
