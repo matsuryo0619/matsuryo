@@ -23,14 +23,14 @@
 
 /* 検索ボックスのスタイル */
 #searchBox {
-    width: calc(100% - 20px); /* 親要素のパディングを考慮した幅 */
+    width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
-    box-sizing: border-box; /* パディングとボーダーを含めて幅を計算 */
+    box-sizing: border-box;
 }
 
 #searchBox:focus {
@@ -56,18 +56,16 @@
 
 /* リストのスタイル */
 #NewProjectList {
-    visibility: hidden; /* 初期状態は非表示 */
-    height: 0; /* 高さをゼロにしてスペースを保つ */
     overflow: hidden; /* 内容がはみ出ないように */
-    margin: 0; /* 不要な余白を削除 */
+    max-height: 0; /* 非表示時の高さをゼロに */
+    transition: max-height 0.5s ease; /* 高さをスムーズにアニメーション */
+    margin: 0;
     padding: 0;
     list-style-type: none;
-    transition: visibility 0s, height 0.3s ease; /* 高さとvisibilityの遷移を設定 */
 }
 
 #NewProjectList.show {
-    visibility: visible; /* 表示 */
-    height: auto; /* 高さを自動で設定 */
+    max-height: 300px; /* リストが表示されるときの最大高さ */
 }
 
 /* リストの各項目 */
@@ -79,7 +77,7 @@
 }
 
 #NewProjectList li:last-child {
-    border-bottom: none; /* 最後の項目には下線を付けない */
+    border-bottom: none;
 }
 
 #NewProjectList li:hover {
