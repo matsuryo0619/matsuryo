@@ -33,14 +33,14 @@ function hideMenu() {
 // キーボードイベントを監視
 document.addEventListener('keydown', (event) => {
     if (event.key === '/' || event.key === '?') {
-        if (document.activeElement === searchBox) return;
+        if (document.activeElement === searchBox) return; // テキストボックス内では無効化
 
         if (!menu.classList.contains('show')) {
             showMenu();
         } else {
             hideMenu();
         }
-        event.preventDefault();
+        event.preventDefault(); // デフォルト動作を無効化
     }
 });
 
@@ -53,8 +53,11 @@ document.addEventListener('click', (event) => {
 
 // ボタンを押したときにリストを表示・非表示
 toggleListButton.addEventListener('click', () => {
+    // `menuList` のクラスを切り替える
     const isVisible = menuList.classList.toggle('show');
-    toggleListButton.textContent = isVisible ? '- 新規' : '+ 新規'; // ボタンの文字を切り替え
+
+    // ボタンの文字をリストの状態に応じて切り替え
+    toggleListButton.textContent = isVisible ? '- 新規' : '+ 新規';
 });
 
 // テキストボックス内でEnterキーを押すと検索を実行
@@ -63,7 +66,7 @@ searchBox.addEventListener('keydown', (event) => {
         const query = searchBox.value.trim();
         if (query) {
             const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.open(searchUrl, '_blank');
+            window.open(searchUrl, '_blank'); // 新しいタブで検索結果を開く
         }
     }
 });
