@@ -23,13 +23,14 @@
 
 /* 検索ボックスのスタイル */
 #searchBox {
-    width: 100%;
+    width: calc(100% - 20px); /* 親要素のパディングを考慮した幅 */
     padding: 8px;
     margin-bottom: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+    box-sizing: border-box; /* パディングとボーダーを含めて幅を計算 */
 }
 
 #searchBox:focus {
