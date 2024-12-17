@@ -60,3 +60,7 @@ searchBox.addEventListener('keydown', (event) => {
         }
     }
 });
+
+function new(type) {
+    window.open(type + ".new");
+}
