@@ -48,7 +48,8 @@
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    line-height: 2;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .button:hover {
