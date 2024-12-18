@@ -1,7 +1,7 @@
 // メニューの要素を取得
 const menu = document.getElementById('menu');
 const searchBox = document.getElementById('searchBox');
-const toggleListButton = document.getElementById('toggleListButton');
+const toggleNwqListButton = document.getElementById('toggleNewListButton');
 const menuList = document.getElementById('NewProjectList'); // IDを "NewProjectList" に変更
 let mouseX = 0;
 let mouseY = 0;
@@ -52,12 +52,12 @@ document.addEventListener('click', (event) => {
 });
 
 // ボタンを押したときにリストを表示・非表示
-toggleListButton.addEventListener('click', () => {
+toggleNewListButton.addEventListener('click', () => {
     // `menuList` のクラスを切り替える
     const isVisible = menuList.classList.toggle('show');
 
     // ボタンの文字をリストの状態に応じて切り替え
-    toggleListButton.textContent = isVisible ? '- 新規' : '+ 新規';
+    toggleNewListButton.textContent = isVisible ? '- 新規' : '+ 新規';
 });
 
 // テキストボックス内でEnterキーを押すと検索を実行
