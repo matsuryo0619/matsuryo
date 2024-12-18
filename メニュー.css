@@ -38,7 +38,7 @@
 }
 
 /* トグルボタンのスタイル */
-#toggleNewListButton {
+.button {
     display: block;
     padding: 6px 12px;
     font-size: 14px;
@@ -50,7 +50,7 @@
     text-align: center;
 }
 
-#toggleNewListButton:hover {
+.button:hover {
     background-color: #005bb5;
 }
 
