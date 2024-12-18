@@ -58,7 +58,7 @@
 #NewProjectList {
     overflow: hidden; /* 内容がはみ出ないように */
     max-height: 0; /* 非表示時の高さをゼロに */
-    transition: max-height 0.5s ease; /* 高さをスムーズにアニメーション */
+    transition: max-height 1.0s ease; /* 高さをスムーズにアニメーション */
     margin: 0;
     padding: 0;
     list-style-type: none;
