@@ -1,8 +1,9 @@
 /* メニュー全体のスタイル */
 #menu {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100px; /* 縦位置を100pxに固定 */
+    left: 50%; /* 横中央 */
+    transform: translateX(-50%); /* 横方向のみ中央に移動 */
     display: none;
     padding: 10px;
     background-color: #ffffff;
@@ -11,61 +12,27 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.9) translateX(-50%); /* 初期スケール */
     z-index: 1000;
-}
 
-#menu.show {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* 検索ボックスのスタイル */
-#searchBox {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    box-sizing: border-box;
-}
-
-#searchBox:focus {
-    border-color: #0078d7;
-}
-
-/* トグルボタンのスタイル */
-#toggleListButton {
-    display: block;
-    padding: 6px 12px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #0078d7;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-}
-
-#toggleListButton:hover {
-    background-color: #005bb5;
+    /* 縦の長さを固定 */
+    height: 300px; /* 必要に応じて調整 */
+    overflow-y: auto; /* 縦方向にスクロール可能 */
 }
 
 /* リストのスタイル */
 #NewProjectList {
-    overflow: hidden; /* 内容がはみ出ないように */
-    max-height: 0; /* 非表示時の高さをゼロに */
-    transition: max-height 0.5s ease; /* 高さをスムーズにアニメーション */
+    overflow: hidden; /* 初期状態で非表示の内容がはみ出さないように */
+    max-height: 0; /* 初期状態で高さをゼロに */
+    transition: max-height 0.5s ease; /* スムーズな表示 */
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
 #NewProjectList.show {
-    max-height: 300px; /* リストが表示されるときの最大高さ */
+    max-height: 300px; /* 表示時の最大高さ */
+    overflow-y: auto; /* 縦方向にスクロール可能 */
 }
 
 /* リストの各項目 */
