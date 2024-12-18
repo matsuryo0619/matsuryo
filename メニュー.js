@@ -1,7 +1,7 @@
 // メニューの要素を取得
 const menu = document.getElementById('menu');
 const searchBox = document.getElementById('searchBox');
-const toggleNwqListButton = document.getElementById('toggleNewListButton');
+const toggleNewListButton = document.getElementById('toggleNewListButton');
 const menuList = document.getElementById('NewProjectList'); // IDを "NewProjectList" に変更
 let mouseX = 0;
 let mouseY = 0;
