@@ -86,3 +86,6 @@
     background-color: #f2f2f2;
     cursor: pointer;
 }
+
+body , * {
+    cursor: none;
