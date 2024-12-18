@@ -59,3 +59,14 @@ toggleListButton.addEventListener('click', () => {
     // ボタンの文字をリストの状態に応じて切り替え
     toggleListButton.textContent = isVisible ? '- 新規' : '+ 新規';
 });
+
+// テキストボックス内でEnterキーを押すと検索を実行
+searchBox.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchBox.value.trim();
+        if (query) {
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(searchUrl, '_blank'); // 新しいタブで検索結果を開く
+        }
+    }
+});
