@@ -1,5 +1,5 @@
 /* メニュー全体のスタイル */
-#/key_menu {
+#menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
     z-index: 1000;
 }
 
-#/key_menu.show {
+#menu.show {
     display: block;
     opacity: 1;
     transform: scale(1);
