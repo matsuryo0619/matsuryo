@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Command</title>
+    <link rel="stylesheet" href="command.css">
+</head>
+<body id="setting" class="dark">
+        <div class="editor-container">
+            <div id="line-numbers">1</div>
+            <textarea id="memo" spellcheck="false"></textarea>
+        </div>
+    <ul id="command-list" style="display: none;">
+        <li value="help">使用できるコマンド一覧を表示します</li>
+        <li value="clear">画面をクリアします</li>
+        <li value="about">アプリケーションの情報を表示します</li>
+        <li value="echo">指定したテキストを表示します</li>
+        <li value="console">コンソールに出力します</li>
+        <li value="close">タブを閉じます</li>
+        <li value="reload">再読み込みします</li>
+        <li value="mode">表示モードを切り替えます</li>
+    </ul>
+    <ol class="command_tab">
+        <li value="help" class="command_letter">help</li>
+    </ol>
+    <script src="command.js"></script>
+</body>
+</html>

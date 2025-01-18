@@ -1,0 +1,99 @@
+/* 全体の背景 */
+body {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#setting.dark {
+    background-color: #2b2b2b;
+}
+
+#setting:not(.dark) {
+    background-color: #d1d1d1;
+}
+
+/* エディタ全体のレイアウト */
+.editor-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+#line-numbers {
+    width: 50px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    user-select: none;
+    overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 行番号エリア */
+#setting:not(.dark) #line-numbers {
+    background-color: #d1d1d1;
+    color: #4f4f4f;
+}
+
+#setting.dark #line-numbers {
+    background-color: #2b2b2b;
+    color: #888;
+}
+
+/* テキストエリア */
+#memo {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    white-space: pre;
+    overflow: auto;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#setting.dark #memo {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#setting:not(.dark) #memo {
+    background-color: #ebebeb;
+    color: black;
+}
+/* 初期状態（非表示） */
+.command_tab {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0;              /* 透明にする */
+    transform: scale(0.8);   /* 少し小さく表示 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度とサイズの変化を滑らかに */
+}
+
+/* 表示状態（tab_displayが追加されたとき） */
+.command_tab.tab_display {
+    opacity: 1;              /* 完全に表示 */
+    transform: scale(1);     /* 元のサイズに戻す */
+}
+
+
+.command_letter {
+    display: none;
+    color: white;
+}
+
+#command-list {
+    margin: 0;
+    padding: 0;
+}
