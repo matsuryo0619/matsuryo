@@ -1,12 +1,14 @@
 /* 全体の背景 */
-body {
+body, html {
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    height: 100%;
+    overflow: hidden;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 #setting.dark {
-    background-color: #2b2b2b;
+    background-color: #333232;
 }
 
 #setting:not(.dark) {
@@ -18,10 +20,12 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
 #line-numbers {
-    width: 50px;
+    width: 75px;
     padding-top: 10px;
     text-align: center;
     font-family: 'Courier New', monospace;
@@ -29,7 +33,7 @@ body {
     line-height: 1.5;
     user-select: none;
     overflow: hidden;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 /* 行番号エリア */
@@ -39,7 +43,7 @@ body {
 }
 
 #setting.dark #line-numbers {
-    background-color: #2b2b2b;
+    background-color: #333232;
     color: #888;
 }
 
@@ -53,12 +57,13 @@ body {
     resize: none;
     outline: none;
     padding: 10px;
+    box-sizing: border-box;  /* パディングを含めた高さ調整 */
     font-size: 16px;
     font-family: 'Courier New', monospace;
     line-height: 1.5;
     white-space: pre;
     overflow: auto;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 #setting.dark #memo {
@@ -78,7 +83,7 @@ body {
     padding: 0;
     opacity: 0;              /* 透明にする */
     transform: scale(0.8);   /* 少し小さく表示 */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度とサイズの変化を滑らかに */
+    transition: opacity 1s ease, transform 1s ease; /* 透明度とサイズの変化を滑らかに */
 }
 
 /* 表示状態（tab_displayが追加されたとき） */
@@ -96,4 +101,74 @@ body {
 #command-list {
     margin: 0;
     padding: 0;
+}
+
+.copy_button {
+    width: 25px;
+    height: 16px;
+    border-radius: 10px;
+    transition: background-color 1s ease, border 1s ease;
+}
+
+.copy_button:hover {
+    cursor: pointer;
+}
+
+#setting.dark .copy_button {
+    background-color: #919191;
+    border: 2px solid #dbdbdb;
+}
+
+#setting:not(.dark) .copy_button {
+    background-color: #dbdbdb;
+    border: 2px solid #919191;
+}
+
+#setting.dark .copy_button:hover {
+    background-color: #b3b3b3;
+}
+
+#setting:not(.dark) .copy_button:hover {
+    background-color: #e6e6e6;
+}
+
+#copy_notification {
+    transition: opacity 1s ease, visibility 1s ease, transform 1s ease, background-color 1s ease, color 1s ease;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 17px;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;   /* ページに対して固定 */
+    bottom: 7px;      /* 下から20pxの位置 */
+    left: 20px;        /* 左から20pxの位置 */
+    transform: scale(0.8); /* 初期状態で少し縮小 */
+    border-radius: 5px; /* 角を丸める */
+    z-index: 9999;     /* 他の要素より上に表示 */
+}
+
+#copy_notification.display_alert {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;   /* 位置を固定 */
+    bottom: 7px;      /* 下から20pxの位置 */
+    left: 20px;        /* 左から20pxの位置 */
+    transform: scale(1); /* 元のサイズに戻す */
+}
+
+#copy_notification:not(.display_alert) {
+    visibility: hidden;  /* 表示されていない時はvisibilityをhiddenに */
+}
+
+
+#setting.dark #copy_notification {
+    background-color: #292929;
+    color: white;
+}
+
+#setting:not(.dark) #copy_notification {
+    background-color: #b0b0b0;
+    color: black;
 }
