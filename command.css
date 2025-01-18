@@ -145,7 +145,7 @@ body, html {
     bottom: 7px;      /* 下から20pxの位置 */
     left: 20px;        /* 左から20pxの位置 */
     transform: scale(0.8); /* 初期状態で少し縮小 */
-    border-radius: 5px; /* 角を丸める */
+    border-radius: 15px; /* 角を丸める */
     z-index: 9999;     /* 他の要素より上に表示 */
 }
 
