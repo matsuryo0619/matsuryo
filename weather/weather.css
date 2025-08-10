@@ -1,11 +1,41 @@
 html, body {
   height: 100vh;
   width: 100vw;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #e0f7fa; /* 優しい水色背景 */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 24px 40px;
+  text-align: center;
+  min-width: 280px;
+}
 
+h3 {
+  margin-top: 0;
+  color: #00796b; /* 深い緑系でアクセント */
+  font-weight: 600;
+}
+
+select#Cities {
+  margin-top: 16px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+select#Cities:hover, select#Cities:focus {
+  border-color: #004d40;
+  outline: none;
 }
