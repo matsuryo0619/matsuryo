@@ -1,8 +1,29 @@
 const Cities = document.getElementById('Cities');
+const Screen = document.getElementById('weather');
+
+function displayWeather(data) {
+  // 例：都市名と今日の天気を表示
+  const cityName = data.location.city;
+  const forecast = data.forecasts[0].telop;
+  Screen.textContent = `${cityName}の天気は「${forecast}」です。`;
+}
 
 Cities.addEventListener('change', () => {
   console.log(Cities.value);
   localStorage.setItem('city', Cities.value);
+
+  fetch(`https://weather.tsukumijima.net/api/forecast/city/${Cities.value}`)
+    .then(res => {
+      if (!res.ok) throw new Error('読み込み失敗');
+      return res.json();
+    })
+    .then(json => {
+      displayWeather(json);
+    })
+    .catch(err => {
+      Screen.textContent = '天気情報の取得に失敗しました。';
+      console.error(err);
+    });
 });
 
 fetch('./Cities.min.json')
@@ -23,8 +44,11 @@ fetch('./Cities.min.json')
     if (savedCity && cities.some(city => city.code === savedCity)) {
       Cities.value = savedCity;
     } else {
-      Cities.value = cities[0].code; // なければ一番最初の都市を選択
+      Cities.value = cities[0].code;
     }
+    
+    // 初期選択に合わせて天気も表示
+    Cities.dispatchEvent(new Event('change'));
   })
   .catch(error => {
     console.error('エラー:', error);
