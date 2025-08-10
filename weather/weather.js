@@ -2,6 +2,7 @@ const Cities = document.getElementById('Cities');
 
 Cities.addEventListener('change', () => {
   console.log(Cities.value);
+  localStorage.setItem('city', Cities.value);
 });
 
 fetch('./Cities.min.json')
@@ -17,6 +18,15 @@ fetch('./Cities.min.json')
       option.textContent = city.name;
       Cities.appendChild(option);
     });
+
+    const savedCity = localStorage.getItem('city');
+    if (savedCity && cities.some(city => city.code === savedCity)) {
+      Cities.value = savedCity;
+    } else {
+      Cities.value = cities[0].code; // なければ一番最初の都市を選択
+    }
+  });
+
   })
   .catch(error => {
     console.error('エラー:', error);
