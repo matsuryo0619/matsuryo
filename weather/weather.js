@@ -25,8 +25,6 @@ fetch('./Cities.min.json')
     } else {
       Cities.value = cities[0].code; // なければ一番最初の都市を選択
     }
-  });
-
   })
   .catch(error => {
     console.error('エラー:', error);
